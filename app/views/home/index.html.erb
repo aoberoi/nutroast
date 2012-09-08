@@ -1,4 +1,14 @@
 <h3>Home</h3>
+
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
 <% end %>
+
+
+<h4> Current Roasts </h4>
+<% @roasts.each do |roast| %>
+  <p>User: <%=link_to roast.user.name, roast.user %>
+  Title : <%= roast.title %> </p>
+<% end %>
+
+
