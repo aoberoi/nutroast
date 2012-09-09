@@ -9,5 +9,5 @@ Nutroast::Application.routes.draw do
 	resources :roasts do
 		resources :stories
 	end
-
+  match "roasts/:id" => "roasts#send_text_message", :as => "invite", :via => :post
 end

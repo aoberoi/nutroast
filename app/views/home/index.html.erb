@@ -10,12 +10,14 @@
 <table class="roastsTable">
 	<tr>
 		<th>Title</th>
-		<th>Victim</th>
+    <th>Victim</th>
+    <th></th>
 	</tr>
 	<% @roasts.each do |roast| %>
 		<tr>
 			<td><%= roast.title %></td>
-			<td><%= roast.roastee %></td>
+      <td><%= roast.roastee %></td>
+      <td><%= link_to 'Join', roast_path(roast) %> </td>
 		</tr>
 	<% end %>
 </table>

@@ -1,4 +1,11 @@
 <h3>Roast of <%= @roast.roastee %></h3>
 
 <p> The Roast will occur on <%= @roast.showDate %>
-at <%= @roast.showTime.strftime("%r") %>
+at <%= @roast.showTime.strftime("%r") %> </p>
+
+<div id='inviteForm'>
+  <form id='twilio'>
+    <p>Enter a number of your buddy to invite </p>
+    <input type="text" name="phone" />
+  </form>
+</div>

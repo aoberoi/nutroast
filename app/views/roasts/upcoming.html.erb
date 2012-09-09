@@ -5,3 +5,13 @@
 		This Roast is not live yet. Come back in <span class="roast-countdown"><%= distance_of_time_in_words_to_now(@roast.showDateTime) %></span> to watch.
 	</div>
 </div>
+
+<div id='inviteForm' method="post" >
+  <%= form_tag(:controller => "roasts", :action => "send_text_message") %>
+    <p>Enter a number of your buddy to invite </p>
+    <input type="text" name="phone" id='phone' /> 
+    <input type="hidden" name='resource' value='<%= @roast.id %>' />
+    <input type="hidden" name='name' value='<%= @roast.roastee %>' />
+    <input type="submit" value="Submit" />
+  </form> 
+</div>
