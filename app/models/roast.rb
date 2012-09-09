@@ -1,5 +1,5 @@
 class Roast < ActiveRecord::Base
-  attr_accessible :roastee, :showDateTime
+  attr_accessible :roastee, :showDateTime, :title
 
   has_many :stories
 
