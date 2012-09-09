@@ -1,3 +1,4 @@
-<h3>Roast of <%= @roastee.name %></h3>
+<h3>Roast of <%= @roast.roastee %></h3>
 
-<p>test test</p>
+<p> The Roast will occur on <%= @roast.showDate %>
+at <%= @roast.showTime.strftime("%r") %>
