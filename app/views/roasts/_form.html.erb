@@ -1,0 +1,20 @@
+<%= form_for @roast do |f| %>
+	  <div class="field">
+	    <%= f.label :roastee %><br />
+	    <%= f.text_field :roastee %>
+	  </div>
+	  
+	  <div class="field">
+	    <%= f.label :showDate %><br />
+	    <%= f.date_select :showDate %>
+	  </div>
+	  
+	  <div class="field">
+	    <%= f.label :showTime %><br />
+	    <%= f.time_select :showTime %>
+	  </div>
+	  
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+<% end %>
