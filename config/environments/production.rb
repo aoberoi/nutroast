@@ -74,8 +74,8 @@ Nutroast::Application.configure do
     port: 25,
     domain: "ryfshow.herokuapp.com",
     authentication: "plain",
-    user_name: "",
-    password: ""
+    user_name: "kdasika",
+    password: "ryfforlife"
   }
 
 
