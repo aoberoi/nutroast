@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20120909060412) do
     t.string   "roastee"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "title"
     t.datetime "showDateTime"
+    t.string   "title"
   end
 
   create_table "roles", :force => true do |t|
