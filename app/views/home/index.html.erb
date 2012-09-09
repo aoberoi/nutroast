@@ -6,9 +6,17 @@
 
 
 <h4> Current Roasts </h4>
-<% @roasts.each do |roast| %>
-  <p>User: <%=link_to roast.user.name, roast.user %>
-  Title : <%= roast.title %> </p>
-<% end %>
 
+<table class="roastsTable">
+	<tr>
+		<th>Title</th>
+		<th>Victim</th>
+	</tr>
+	<% @roasts.each do |roast| %>
+		<tr>
+			<td><%= roast.title %></td>
+			<td><%= roast.roastee %></td>
+		</tr>
+	<% end %>
+</table>
 
