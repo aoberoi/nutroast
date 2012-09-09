@@ -18,6 +18,8 @@
 	<!-- Included CSS Files -->
 	<%= stylesheet_link_tag    "application" %>
 	
+	<%= if content_for?(:scripts) then yield(:scripts) end %></title>
+
 	<!-- Included JS Files  -->
 	<%= javascript_include_tag "application" %>
   

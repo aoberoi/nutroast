@@ -1,16 +1,20 @@
+<% content_for :scripts do -%>
+	<%= javascript_include_tag "http://static.opentok.com/v0.91/js/TB.min.js" %>
+<% end -%>
+
 <h2>Roast of <%= @roast.roastee %></h2>
 
 <div class="row">
 	<div class="panel five columns">
 		<div class="roaster">
-			<h4 class="roaster_title">Roast from <span class="roaster_name"><span></h4>
-			<div class="roaster_content">
+			<h4 class="roaster-title">Roast from <span class="roaster_name"><span></h4>
+			<div class="roaster-content">
 			</div>
 		</div>
 	</div>
 	<div class="panel five columns">
 		<div class="roastee">
-			<div id="roastee_video">
+			<div id="roastee-video">
 			</div>
 		</div>
 	</div>
@@ -36,4 +40,15 @@
 
 <div id="story">
   <%= link_to "Create a Story", new_roast_story_path(@roast) %>
+</div>
+
+<div id="roast-setup" class="reveal-modal">
+  <h2>Let's Get it Started</h2>
+	<p>Are you here to be Roasted?</p>
+	<ul class="button-group even two-up">
+		<li><a class="button roast-setup-yes close-reveal-modal">YEAH, bring it on!</a></li>
+		<li><a class="button roast-setup-no">I just want to watch</a></li>
+	</ul>
+	
+  <a class="close-reveal-modal">&#215;</a>
 </div>
