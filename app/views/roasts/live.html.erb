@@ -1,4 +1,4 @@
-<h3>Roast of <%= @roast.roastee %></h3>
+<h2>Roast of <%= @roast.roastee %></h2>
 
 <div class="row">
 	<div class="panel five columns">
@@ -11,10 +11,17 @@
 	</div>
 </div>
 
-<div id='inviteForm'>
-  <form id='twilio'>
+<div id='inviteForm' method="post" >
+  <h3> Invite a friend </h3>
+  <%= form_tag(:controller => "roasts", :action => "send_text_message") %>
     <p>Enter a number of your buddy to invite </p>
-    <input type="text" name="phone" />
-  </form>
+    <input type="text" name="phone" id='phone' /> 
+    <input type="hidden" name='resource' value='<%= @roast.id %>' />
+    <input type="hidden" name='name' value='<%= @roast.roastee %>' />
+    <input type="submit" value="Submit" />
+  </form> 
 </div>
 
+<div id="story">
+  <%= link_to "Create a Story", new_roast_story_path(@roast) %>
+</div>

@@ -6,8 +6,9 @@ Nutroast::Application.routes.draw do
   devise_for :users
   resources :users, :only => [:show, :index]
 
-	resources :roasts do
-		resources :stories
-	end
+  resources :roasts do
+    resources :stories
+  end
+    
   match "roasts/:id" => "roasts#send_text_message", :as => "invite", :via => :post
 end
