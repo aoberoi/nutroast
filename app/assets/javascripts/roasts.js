@@ -28,7 +28,7 @@ function startShow() {
 	var recorderManager = TB.initRecorderManager(apiKey);
 	// play through the queue
 	$('.story-record').each(function(i, s) {
-		var archiveId = $.data(s, 'archive_id');
+		var archiveId = $(s).data('story');
 		console.log(archiveId);
 		// create something to go inside .roaster-content
 		$('<div id="roast-' + archiveId + '"></div>').appendTo($('.roaster-content'));
@@ -40,6 +40,7 @@ function startShow() {
 function publishRoastee() {
 	session.publish('roastee-video');
 	session.signal();
+	startShow();
 }
 
 
