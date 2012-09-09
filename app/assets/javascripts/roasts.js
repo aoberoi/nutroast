@@ -21,24 +21,39 @@ function sessionConnectedHandler(event) {
 	if (event.streams.length > 0) {
 		startShow();
 	}
-}
-
-// only gets called when connected and roastee is here
-function startShow() {
-	var recorderManager = TB.initRecorderManager(apiKey);
-	// play through the queue
-	$('.story-record').each(function(i, s) {
-		var archiveId = $(s).data('story');
-		console.log(archiveId);
-		// create something to go inside .roaster-content
-		$('<div id="roast-' + archiveId + '"></div>').appendTo($('.roaster-content'));
-		player = recorderManager.displayPlayer(archiveId, token, 'roast-' + archiveId);
-		
+	$('.roast-setup-yes').click(function() {
+		$('#roast-setup').trigger('reveal:close');
 	});
 }
 
+var archives = [];
+var recorderManager;
+
+// only gets called when connected and roastee is here
+function startShow() {
+	recorderManager = TB.initRecorderManager(apiKey);
+	// play through the queue
+	$('.story-record').each(function(i, s) {
+		archives.push($(s).data('story'));
+	});
+	next();
+}
+
+function next() {
+	if (archives.length > 0) {
+		var archiveId = archives[0];
+		$('<div id="roast-' + archiveId + '"></div>').appendTo($('.roaster-content'));
+		player = recorderManager.displayPlayer(archiveId, token, 'roast-' + archiveId, { autoPlay : true , style : { buttonDisplayMode : 'off' }, width: 320, height: 240 });
+		player.addEventListener('playbackStopped', function() {
+			archives.splice(0, 1);
+			recorderManager.removePlayer(player);
+			next();
+		});
+	}
+}
+
 function publishRoastee() {
-	session.publish('roastee-video');
+	session.publish('roastee-video', { width: 320, height: 240 });
 	session.signal();
 	startShow();
 }

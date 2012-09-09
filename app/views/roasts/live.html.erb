@@ -2,19 +2,22 @@
 	<%= javascript_include_tag "http://static.opentok.com/v0.91/js/TB.min.js" %>
 <% end -%>
 
-<h2>Roast of <%= @roast.roastee %></h2>
+<h2 class="roast-heading">Roast of <%= @roast.roastee %></h2>
 
 <div class="row">
 	<div class="panel five columns">
 		<div class="roaster">
-			<h4 class="roaster-title">Roast from <span class="roaster_name"><span></h4>
+			<h4 class="roaster-title">Roast from <span class="roaster-name"><span></h4>
 			<div class="roaster-content">
 			</div>
 		</div>
 	</div>
-	<div class="panel five columns">
+	<div class="panel five columns hack">
 		<div class="roastee">
-			<div id="roastee-video">
+			<h4 class="roastee-name"> <%= @roast.roastee %> </h4>
+			<div class="roastee-content">
+				<div id="roastee-video">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -62,7 +65,7 @@
   <h2>Let's Get it Started</h2>
 	<p>Are you here to be Roasted?</p>
 	<ul class="button-group even two-up">
-		<li><a class="button roast-setup-yes close-reveal-modal">YEAH, bring it on!</a></li>
+		<li><a class="button roast-setup-yes">YEAH, bring it on!</a></li>
 		<li><a class="button roast-setup-no">I just want to watch</a></li>
 	</ul>
 	

@@ -7,3 +7,20 @@
 .roast-countdown {
   color: #EEEE00;
   font-weight: 900; }
+
+.roaster-content,
+.roastee-content {
+  height: 240px; }
+
+.roastee {
+  height: 240px; }
+
+.hack {
+  height: 335px; }
+
+.roaster-title {
+  text-align: center;
+  display: none; }
+
+.roast-heading, .roastee-name {
+  text-align: center; }
