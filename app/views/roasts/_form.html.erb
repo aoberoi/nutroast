@@ -1,4 +1,9 @@
 <%= form_for @roast do |f| %>
+    <div class="field">
+	    <%= f.label 'Title of the Roast' %><br />
+	    <%= f.text_field :title %>
+	  </div>
+	  
 	  <div class="field">
 	    <%= f.label :roastee %><br />
 	    <%= f.text_field :roastee %>
