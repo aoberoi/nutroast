@@ -1,0 +1,10 @@
+<%= form_for @story do |f| %>
+  <div class="field">
+    <%= f.label 'Title of this story' %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="tokbox">
+    <!-- Hidden field magic -->
+  </div>
+<% end %>
