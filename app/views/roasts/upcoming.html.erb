@@ -1,0 +1,7 @@
+<h3 class="roast-title">The Roast of <%= @roast.roastee %></h3>
+
+<div class="row">
+	<div class="alert-box eight columns centered roast-status">
+		This Roast is not live yet. Come back in <span class="roast-countdown"><%= distance_of_time_in_words_to_now(@roast.showDateTime) %></span> to watch.
+	</div>
+</div>

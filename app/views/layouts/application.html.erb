@@ -23,10 +23,10 @@
   
   <%= csrf_meta_tags %>
 </head>
-<body class="off-canvas">
+<body>
 	<div id="container" class="container">
+		<%= render 'layouts/navigation' %>
 		<header>
-			<%= render 'layouts/navigation' %>
 			<%= render 'layouts/messages' %>
 		</header>
 		<div id="main" role="main">

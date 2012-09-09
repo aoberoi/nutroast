@@ -1,6 +1,11 @@
 class RoastsController < ApplicationController
 	def show
 		@roast = Roast.find params[:id]
+		if @roast.started?
+			render :action => "live"
+		else
+			render :action => "upcoming"
+		end
 	end
 
   def new
