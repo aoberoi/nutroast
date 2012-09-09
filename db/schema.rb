@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909060412) do
+ActiveRecord::Schema.define(:version => 20120909151939) do
 
   create_table "roasts", :force => true do |t|
     t.string   "roastee"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120909060412) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "archive_id"
   end
 
   add_index "stories", ["roast_id"], :name => "index_stories_on_roast_id"
