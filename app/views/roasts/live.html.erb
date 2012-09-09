@@ -23,6 +23,22 @@
 <div class="row">
 	<div class="panel five columns">
 		<div class="queue">
+			<table>
+				<thead>
+					<tr>
+						<th>Roaster</th>
+						<th>Title</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @roast.stories.each do |s| %>
+						<tr class="story-record" data-story="<%= s.archive_id %>">
+						<td><%= s.user.name %></td>
+						<td><%= s.title %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
